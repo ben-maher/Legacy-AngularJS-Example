@@ -1,0 +1,49 @@
+<div class="template" ng-controller="DetailsController">
+    <div class="col-xs-12 col-sm-6">
+        <div id="plot" class="panel panel-default">
+            <div class="panel-body">
+                <p>
+                <h2>{{imdbItem.title}}</h2>
+                <img src="{{imdbItem.poster}}" alt="{{imdbItem.title}}" />
+                </p>
+
+                <p>
+                    {{imdbItem.plot}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Details</div>
+            <div class="panel-body">
+                <p>
+                    <b>Title:</b> {{imdbItem.title}} <br/>
+                    <b>Released:</b> {{imdbItem.released}}<br/>
+                    <b>Runtime:</b> {{imdbItem.runtime}}<br/>
+                    <b>Genre:</b> {{imdbItem.genre}}<br/>
+                    <b>Director:</b> {{imdbItem.director}}<br/>
+                    <b>Writer:</b> {{imdbItem.writer}}<br/>
+                    <b>Actors:</b> {{imdbItem.actors}}<br/>
+                    <b>Language:</b> {{imdbItem.lang}}<br/>
+                    <b>Country:</b> {{imdbItem.country}}<br/>
+                </p>
+            </div>
+        </div> 
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Ratings</div>
+            <div class="panel-body">
+                <p>
+                    <b>Metascore:</b> {{imdbItem.metascore}}<br/>
+                    <b>Awards:</b> {{imdbItem.awards}}<br/>
+                    <b>Imdb Rating</b> {{imdbItem.imdbRating}}<br/>
+                    <b>Imdb Votes</b> {{imdbItem.imdbVotes}}<br/>
+                </p>
+            </div>
+        </div> 
+    </div>
+</div>
