@@ -20,7 +20,7 @@ angular.module('ImdbRip').controller('HomeController', function ($scope, $routeP
 
     });
 
-    ["tt0120655", "tt0077415", "tt0087800", "tt0317740", "tt0099685", "tt2278871"].forEach(function (value) {
+    ["tt2975590", "tt1608290", "tt1663202", "tt4263482", "tt2488496", "tt2379713"].forEach(function (value) {
 
         var imdbReq = {
             method: 'GET',
