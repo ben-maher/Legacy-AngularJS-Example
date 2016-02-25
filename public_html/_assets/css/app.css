@@ -48,3 +48,6 @@ body {
 .search-results th {
     text-align: center;
 }
+.thumbnail {
+    cursor: pointer;
+}
