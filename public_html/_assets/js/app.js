@@ -28,10 +28,11 @@
                             templateUrl: 'templates/contact.html',
                             controller: 'ContactController'
                         })
-//                        .when(['/home', '/', '/#'], {
-//                            tempalteUrl: 'templates/home.html',
-//                            controller: 'HomeController'
-//                        }) //TODO GET THIS WORKING SO WE CAN HAVE 404 PAGE
+                        .when('/search/:query', {
+                            name: 'search',
+                            templateUrl: 'templates/search.html',
+                            controller: 'SearchController'
+                        })
                         .otherwise({
                             name: 'home',
                             templateUrl: 'templates/home.html',

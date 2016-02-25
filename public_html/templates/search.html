@@ -1,0 +1,24 @@
+<div class="template" ng-controller="SearchController">
+    <div class="">
+        <div id="plot" class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <th></th>
+                    <th>Title</th>
+                    <th>Release Date</th>
+                    <th>Year</th>
+                    </thead>
+                    <tbody>
+                        <tr style="cursor:pointer" ng-repeat="imdbItem in imdbItems" ng-click="Navigate(imdbItem)" >
+                            <td><img src="{{imdbItem.Poster}}" alt="{{imdbItem.Title}}" /></td>
+                            <td>{{imdbItem.Title}}</td>
+                            <td>{{imdbItem.Year}}</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
