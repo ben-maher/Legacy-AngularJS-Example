@@ -11,7 +11,6 @@ angular.module('ImdbRip').controller('SearchController', function ($scope, $rout
 
     $http(imdbReq).success(function (data) {
         $scope.imdbItems = data.Search;
-        console.log(data);
         
     });
     
