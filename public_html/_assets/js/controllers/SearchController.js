@@ -16,7 +16,6 @@ angular.module('ImdbRip').controller('SearchController', function ($scope, $rout
     });
     
     $scope.Navigate = function(imdbItem) {
-        console.log(imdbItem);
         window.location = "#/details/" + imdbItem.imdbID;
 };
 });

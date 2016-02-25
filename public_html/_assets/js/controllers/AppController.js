@@ -1,4 +1,4 @@
-angular.module('ImdbRip').controller('AppController', function ($route) {
+angular.module('ImdbRip').controller('AppController', function ($route, $location) {
     this.onRoute = function (routeName) {
         var routeChecks = routeName instanceof Array ? routeName : arguments;
         var currentRouteName = $route.current && $route.current.name ? $route.current.name : null;
@@ -12,6 +12,10 @@ angular.module('ImdbRip').controller('AppController', function ($route) {
             return false;
         } else
             return false;
+    };
+    
+    this.search = function() {
+        $location.path('/search/'+this.searchTerm);
     };
     
 });

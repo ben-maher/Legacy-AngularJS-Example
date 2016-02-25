@@ -30,12 +30,21 @@ body {
     -webkit-box-orient: vertical;
     display: -webkit-box;
 }
-.ui-autocomplete{
+.ui-autocomplete {
     z-index: 99999;
 }
-.ui-autocomplete .ui-menu-item{
+.ui-autocomplete .ui-menu-item {
     border-radius: 5px;
 }
 #plot img {
     max-width: 100%;
+}
+.search-result {
+    cursor: pointer;
+}
+.search-result img {
+    max-height: 100px;
+}
+.search-results th {
+    text-align: center;
 }

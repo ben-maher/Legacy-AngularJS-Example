@@ -24,7 +24,6 @@ angular.module('ImdbRip').directive('autoComplete', function ($timeout, $http) {
                 iElement.autocomplete({
                     source: titles,
                     focus: function (event, ui) {
-                        console.log(iElement, ui.item);
                         event.preventDefault();
                         iElement.val(ui.item.label);
                         return false;
