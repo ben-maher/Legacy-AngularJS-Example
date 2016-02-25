@@ -7,21 +7,48 @@ and open the template in the editor.
     Created on : 23-Feb-2016, 13:18:24
     Author     : MaherB
 */
-
+* {
+    text-shadow: none;
+}
 body {
     padding-top: 50px;
     font: 14px/15px Arial,sans-serif;
+    background: #222;
 }
 .template {
     padding: 40px 15px;
     text-align: center;
 }
+#main-nav {
+    background: #333;
+    border-bottom: 2px solid #39F;
+}
+#main-nav li a:hover {
+    background: #444;
+    color: #FFF;
+}
+#main-nav li a {
+    text-shadow: none;
+}
+#main-nav li.active a {
+    text-shadow: none;
+    background: #39F;
+    color: #FFF;
+}
+#new-films {
+    background: #333; 
+    border-radius: 5px;
+    color: #FFF;
+}
 .thumbnail {
     height: 370px;
+    background: #444;
+    border: none;
 }
 .thumbnail .img {
     background: none no-repeat center center / contain;
     height: 120px;
+    margin-top: 5px;
 }
 .thumbnail p:first-of-type {
     height: 120px;
@@ -50,4 +77,12 @@ body {
 }
 .thumbnail {
     cursor: pointer;
+}
+.panel-body {
+    border-radius: 5px;
+}
+.panel-heading + .panel-body {
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
