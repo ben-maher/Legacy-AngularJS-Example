@@ -33,7 +33,7 @@ angular.module('ImdbRip').controller('DetailsController', function ($scope, $rou
             tomatoReviews: data.tomatoReviews,
             tomatoFresh: data.tomatoFresh,
             tomatoRotten: data.tomatoRotten,
-            tomatoConsensus: data.tomatoConesnsus,
+            tomatoConsensus: data.tomatoConsensus,
             tomatoUserMeter: data.tomatoUserMeter,
             tomatoUserRating: data.tomatoUserRating,
             tomatoUserReviews: data.tomatoUserREviews,
