@@ -49,14 +49,12 @@ $scope.imdbItems = [];
                         website: value.Website
                     }
             )
-
-
         });
         //todo .replace("http://","https://")
 
     });
 
     $scope.Navigate = function (imdbItem) {
-        window.location = "#/details/" + imdbItem.imdbID;
+        window.location = "#/details/" + imdbItem.imdbId;
     };
 });

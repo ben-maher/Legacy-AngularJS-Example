@@ -61,7 +61,7 @@ body {
     z-index: 99999;
 }
 .ui-autocomplete .ui-menu-item {
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 #plot img {
     max-width: 100%;

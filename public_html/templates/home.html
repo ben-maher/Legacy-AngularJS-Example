@@ -51,11 +51,11 @@
     <div id="new-films" class="col-lg-3">
         <h2>Just Released</h2>
         <div class="thumbnail" ng-repeat="newFilm in newFilms" ng-click="Navigate(newFilm)"> 
-            <div class="img" style="background-image: url('{{newFilm.Poster}}');"></div>
+            <div class="img" style="background-image: url('{{newFilm.poster}}');"></div>
             <div class="caption"> 
-                <h3>{{newFilm.Title}}</h3> 
+                <h3>{{newFilm.title}}</h3> 
                 <p>
-                    {{newFilm.Plot}}
+                    {{newFilm.plot}}
                 </p>
             </div> 
         </div>
@@ -66,11 +66,11 @@
         <h2>Popular</h2>
         <div class="col-sm-6 col-md-4" ng-repeat="popularFilm in popularFilms"> 
             <div class="thumbnail" ng-click="Navigate(popularFilm)"> 
-                <div class="img" style="background-image: url('{{popularFilm.Poster}}');"></div>
+                <div class="img" style="background-image: url('{{popularFilm.poster}}');"></div>
                 <div class="caption">
-                    <h3>{{popularFilm.Title}}</h3>
+                    <h3>{{popularFilm.title}}</h3>
                     <p>
-                        {{popularFilm.Plot}}
+                        {{popularFilm.plot}}
                     </p> 
                 </div> 
             </div>

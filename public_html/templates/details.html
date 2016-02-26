@@ -2,14 +2,16 @@
     <div class="col-xs-12 col-sm-6">
         <div id="plot" class="panel panel-default">
             <div class="panel-body">
-                <p>
                 <h2>{{imdbItem.title}}</h2>
-                <img src="{{imdbItem.poster}}" alt="{{imdbItem.title}}" />
-                </p>
 
-                <p>
-                    {{imdbItem.plot}}
-                </p>
+                <div ng-if="imdbItem.poster !== 'N/A'">
+                    <img src="{{imdbItem.poster}}" alt="{{imdbItem.title}} poster" />
+                </div>
+                <div ng-if="imdbItem.plot !== 'N/A'">
+                    <p>
+                        {{imdbItem.plot}}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -18,17 +20,45 @@
         <div class="panel panel-default">
             <div class="panel-heading">Details</div>
             <div class="panel-body">
-                <p>
-                    <b>Title:</b> {{imdbItem.title}} <br/>
-                    <b>Released:</b> {{imdbItem.released}}<br/>
-                    <b>Runtime:</b> {{imdbItem.runtime}}<br/>
-                    <b>Genre:</b> {{imdbItem.genre}}<br/>
-                    <b>Director:</b> {{imdbItem.director}}<br/>
-                    <b>Writer:</b> {{imdbItem.writer}}<br/>
-                    <b>Actors:</b> {{imdbItem.actors}}<br/>
-                    <b>Language:</b> {{imdbItem.lang}}<br/>
-                    <b>Country:</b> {{imdbItem.country}}<br/>
-                </p>
+                <div ng-if="imdbItem.title !== 'N/A'">
+                    <b>Title:</b> {{imdbItem.title}} 
+                </div>
+                <div ng-if="imdbItem.released !== 'N/A'">
+                    <b>Released:</b> {{imdbItem.released}} 
+                </div>
+                <div ng-if="imdbItem.runtime !== 'N/A'">
+                    <b>Runtime:</b> {{imdbItem.runtime}} 
+                </div>
+                <div ng-if="imdbItem.genre !== 'N/A'">
+                    <b>Genre:</b> {{imdbItem.genre}} 
+                </div>
+                <div ng-if="imdbItem.director !== 'N/A'">
+                    <b>Director:</b> {{imdbItem.director}} 
+                </div>
+                <div ng-if="imdbItem.writer !== 'N/A'">
+                    <b>Writer:</b> {{imdbItem.writer}} 
+                </div>
+                <div ng-if="imdbItem.actors !== 'N/A'">
+                    <b>Actors:</b> {{imdbItem.actors}} 
+                </div>
+                <div ng-if="imdbItem.language !== 'N/A'">
+                    <b>Language:</b> {{imdbItem.language}} 
+                </div>
+                <div ng-if="imdbItem.country !== 'N/A'">
+                    <b>Country:</b> {{imdbItem.country}}
+                </div>
+                <div ng-if="imdbItem.dvd !== 'N/A'">
+                    <b>DVD</b> {{imdbItem.dvd}}
+                </div>
+                <div ng-if="imdbItem.boxOffice !== 'N/A'">
+                    <b>Box Office</b> {{imdbItem.boxOffice}} 
+                </div>
+                <div ng-if="imdbItem.production !== 'N/A'">
+                    <b>Production</b> {{imdbItem.production}} 
+                </div>
+                <div ng-if="imdbItem.website !== 'N/A'">
+                    <b>Website</b> <a href="{{imdbItem.website}}" target="_blank">{{imdbItem.website}}</a> 
+                </div>
             </div>
         </div> 
     </div>
@@ -37,12 +67,58 @@
         <div class="panel panel-default">
             <div class="panel-heading">Ratings</div>
             <div class="panel-body">
-                <p>
-                    <b>Metascore:</b> {{imdbItem.metascore}}<br/>
-                    <b>Awards:</b> {{imdbItem.awards}}<br/>
-                    <b>Imdb Rating</b> {{imdbItem.imdbRating}}<br/>
-                    <b>Imdb Votes</b> {{imdbItem.imdbVotes}}<br/>
-                </p>
+                <div ng-if="imdbItem.metascore !== 'N/A'">
+                    <b>Metascore:</b> {{imdbItem.metascore}} 
+                </div>
+                <div ng-if="imdbItem.awards !== 'N/A'">
+                    <b>Awards:</b> {{imdbItem.awards}} 
+                </div>
+                <div ng-if="imdbItem.imdbRating !== 'N/A'">
+                    <b>Imdb Rating: </b> {{imdbItem.imdbRating}} 
+                </div>
+                <div ng-if="imdbItem.imdbVotes !== 'N/A'">
+                    <b>Imdb Votes: </b> {{imdbItem.imdbVotes}} 
+                </div>
+
+                <div ng-if="imdbItem.type !== 'series'" id="tomatoReviews">
+                    <hr>
+                    <h4>Rotten Tomatoes</h4>
+
+                    <div ng-if="imdbItem.tomatoMeter !== 'N/A'">
+                        <b>Tomato Meter</b> {{imdbItem.tomatoMeter}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoImage !== 'N/A'">
+                        <b>Tomato Image</b> {{imdbItem.tomatoImage}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoRating !== 'N/A'">
+                        <b>Tomato Rating</b> {{imdbItem.tomatoRating}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoReviews !== 'N/A'">
+                        <b>Tomato Reviews</b> {{imdbItem.tomatoReviews}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoFresh !== 'N/A'">
+                        <b>Tomato Fresh</b> {{imdbItem.tomatoFresh}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoRotten !== 'N/A'">
+                        <b>Tomato Rotten</b> {{imdbItem.tomatoRotten}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoConsensus !== 'N/A'">
+                        <b>Tomato Consensus</b> {{imdbItem.tomatoConsensus}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoUserMeter !== 'N/A'">
+                        <b>Tomato User Meter</b> {{imdbItem.tomatoUserMeter}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoUserRating !== 'N/A'">
+                        <b>Tomato User Rating</b> {{imdbItem.tomatoUserRating}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoUserReviews !== 'N/A'">
+                        <b>Tomato User Reviews</b> {{imdbItem.tomatoUserReviews}} 
+                    </div>
+                    <div ng-if="imdbItem.tomatoUrl !== 'N/A'">
+                        <b>Tomato URL</b> {{imdbItem.tomatoUrl}} 
+                    </div>
+                </div>
+
             </div>
         </div> 
     </div>
