@@ -6,7 +6,11 @@ angular.module('ImdbRip').controller('SearchController', function ($scope, $rout
 
     var imdbReq = {
         method: 'GET',
-        url: 'https://omdbapi.com/?s=' + $routeParams.query + '&v=1'
+        url: 'https://omdbapi.com/?s=' + $routeParams.query + '&v=1',
+        headers: {
+            'User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
+        }
+        }
     };
 $scope.imdbItems = [];
     $http(imdbReq).success(function (data) {
