@@ -7,6 +7,7 @@ angular.module('ImdbRip').controller('DetailsController', function ($scope, $rou
     };
 
     $http(imdbReq).success(function (data) {
+        
         $scope.imdbItem = {
             title: data.Title,
             year: data.Year,
@@ -44,6 +45,16 @@ angular.module('ImdbRip').controller('DetailsController', function ($scope, $rou
             website: data.Website
         };
 
+        var trailerReq = {
+        method: 'GET',
+        url: 'http://trailersapi.com/trailers.json?movie='+ $scope.imdbItem.title +'&limit=1&width=320'
+    };
+
+$http(trailerReq).success(function (data){
+    console.log(data);
+    console.log(trailerReq);
+   $scope.imdbItem.trailer = data.first(); 
+});
 
     });
 });
