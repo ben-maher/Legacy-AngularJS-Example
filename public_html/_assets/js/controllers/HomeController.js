@@ -7,7 +7,6 @@ angular.module('ImdbRip').controller('HomeController', function ($scope, $routeP
     $scope.popularFilms = [];
 
     ["tt2404233", "tt1431045"].forEach(function (value) {
-
         var imdbReq = {
             method: 'GET',
             url: 'https://omdbapi.com/?i=' + value + '&v=1'
@@ -29,7 +28,7 @@ angular.module('ImdbRip').controller('HomeController', function ($scope, $routeP
                         language: data.Language,
                         country: data.Country,
                         awards: data.Awards,
-                        poster: data.Poster.replace("http://", "https://"),
+                        poster: 'https://img.omdbapi.com/?i=' + data.imdbID + '&apikey=bfcb4000&h=500',
                         metascore: data.Metascore,
                         imdbRating: data.imdbRating,
                         imdbVotes: data.imdbVotes,
@@ -78,7 +77,7 @@ angular.module('ImdbRip').controller('HomeController', function ($scope, $routeP
                         language: data.Language,
                         country: data.Country,
                         awards: data.Awards,
-                        poster: data.Poster.replace("http://", "https://"),
+                        poster: 'https://img.omdbapi.com/?i='+data.imdbID+'&apikey=bfcb4000&h=500',
                         metascore: data.Metascore,
                         imdbRating: data.imdbRating,
                         imdbVotes: data.imdbVotes,

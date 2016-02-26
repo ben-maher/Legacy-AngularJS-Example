@@ -6,13 +6,11 @@ angular.module('ImdbRip').controller('SearchController', function ($scope, $rout
 
     var imdbReq = {
         method: 'GET',
-        url: 'https://omdbapi.com/?s=' + $routeParams.query + '&v=1',
-        headers: {
-            'User-Agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36'
-        }
-        }
+        url: 'https://omdbapi.com/?s=' + $routeParams.query + '&v=1'
     };
-$scope.imdbItems = [];
+
+
+    $scope.imdbItems = [];
     $http(imdbReq).success(function (data) {
         data.Search.forEach(function (value) {
             $scope.imdbItems.push(
@@ -30,7 +28,7 @@ $scope.imdbItems = [];
                         language: value.Language,
                         country: value.Country,
                         awards: value.Awards,
-                        poster: value.Poster.replace("http://", "https://"),
+                        poster: 'https://img.omdbapi.com/?i=' + value.imdbID + '&apikey=bfcb4000&h=500',
                         metascore: value.Metascore,
                         imdbRating: value.imdbRating,
                         imdbVotes: value.imdbVotes,

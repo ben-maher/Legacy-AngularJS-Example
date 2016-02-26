@@ -21,7 +21,7 @@ angular.module('ImdbRip').controller('DetailsController', function ($scope, $rou
             language: data.Language,
             country: data.Country,
             awards: data.Awards,
-            poster: data.Poster.replace("http://","https://"),
+            poster: 'https://img.omdbapi.com/?i='+data.imdbID+'&apikey=bfcb4000&h=500',
             metascore: data.Metascore,
             imdbRating: data.imdbRating,
             imdbVotes: data.imdbVotes,
