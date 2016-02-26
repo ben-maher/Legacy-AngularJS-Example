@@ -10,9 +10,9 @@
                 </thead>
                 <tbody>
                     <tr class="search-result" ng-repeat="imdbItem in imdbItems" ng-click="Navigate(imdbItem)" >
-                        <td><img ng-if="imdbItem.Poster !== 'N/A'" ng-src="{{imdbItem.Poster}}" alt="{{imdbItem.Title}}" /></td>
-                        <td>{{imdbItem.Title}}</td>
-                        <td>{{imdbItem.Year}}</td>
+                        <td><img ng-if="imdbItem.poster !== 'N/A'" ng-src="{{imdbItem.poster}}" alt="{{imdbItem.title}}" /></td>
+                        <td>{{imdbItem.title}}</td>
+                        <td>{{imdbItem.year}}</td>
                         <td></td>
                     </tr>
                 </tbody>
