@@ -1,4 +1,4 @@
-<div class="template" ng-controller="MovieController">
+<div ng-if="movie !== null" class="template" ng-controller="MovieController">
     <div class="col-xs-12 col-sm-6">
         <div id="plot" class="panel panel-default">
             <div class="panel-body">
@@ -16,20 +16,36 @@
         </div>
         <div class="panel panel-default">
             <div class="panel-body">
+                <h4>Cast</h4>
                 <table class="table table-striped search-results">
-                <thead>
-                <th width="150"></th>
-                <th>character</th>
-                <th>Name</th>
-                </thead>
-                <tbody>
-                    <tr class="search-result" ng-repeat="castMember in movie.credits.cast" ng-click="Navigate(imdbItem)" >
-                        <td><img ng-if="castMember.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{castMember.profile_path}}" alt="{{castMember.character}}" /></td>
-                        <td>{{castMember.character}}</td>
-                        <td>{{castMember.name}}</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <thead>
+                    <th width="150"></th>
+                    <th>character</th>
+                    <th>Actor</th>
+                    </thead>
+                    <tbody>
+                        <tr class="search-result" ng-repeat="castMember in movie.credits.cast" ng-click="Navigate(imdbItem)" >
+                            <td><img ng-if="castMember.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{castMember.profile_path}}" alt="{{castMember.character}}" /></td>
+                            <td>{{castMember.character}}</td>
+                            <td>{{castMember.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Crew</h4>
+                <table class="table table-striped search-results">
+                    <thead>
+                    <th width="150"></th>
+                    <th>Name</th>
+                    <th>Department/Job</th>
+                    </thead>
+                    <tbody>
+                        <tr class="search-result" ng-repeat="crewMember in movie.credits.crew" ng-click="Navigate(imdbItem)" >
+                            <td><img ng-if="crewMember.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{crewMember.profile_path}}" alt="{{castMember.character}}" /></td>
+                            <td>{{crewMember.name}}</td>
+                            <td>{{crewMember.department}} - {{crewMember.job}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
