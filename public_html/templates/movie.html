@@ -1,1 +1,57 @@
-HELLO
+<div class="template" ng-controller="MovieController">
+    <div class="col-xs-12 col-sm-6">
+        <div id="plot" class="panel panel-default">
+            <div class="panel-body">
+                <h2>{{movie.title}}</h2>
+                <h3>{{movie.tagline}}</h3>
+                <div ng-if="movie.poster !== 'N/A'">
+                    <img src="http://image.tmdb.org/t/p/w300{{movie.poster_path}}" alt="{{movie.title}} poster" /><br /><br/>
+                </div>
+                <div ng-if="movie.overview !== 'N/A'">
+                    <p>
+                        {{movie.overview}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <table class="table table-striped search-results">
+                <thead>
+                <th width="150"></th>
+                <th>character</th>
+                <th>Name</th>
+                </thead>
+                <tbody>
+                    <tr class="search-result" ng-repeat="castMember in movie.credits.cast" ng-click="Navigate(imdbItem)" >
+                        <td><img ng-if="castMember.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{castMember.profile_path}}" alt="{{castMember.character}}" /></td>
+                        <td>{{castMember.character}}</td>
+                        <td>{{castMember.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Details</div>
+            <div class="panel-body">
+                <ul>
+                    <li><b>Title:</b> {{movie.title}}</li> 
+                    <li><b>Released:</b> {{movie.release_date}} </li> 
+                    <li><b>Runtime:</b> {{movie.runtime}} </li> 
+                    <li><b>Genre:</b> {{movie.genresString}} </li> 
+                    <li><b>Language:</b> {{movie.language}} </li> 
+                    <li><b>Country:</b> {{movie.country}}</li> 
+                    <li><b>DVD:</b> {{movie.dvd}}</li> 
+                    <li><b>Box Office:</b> {{movie.boxOffice}} </li> 
+                    <li><b>Production:</b> {{movie.production}} </li> 
+                    <li><b>Website:</b> <a href="{{movie.website}}" target="_blank">{{movie.website}}</a> </li> 
+                </ul>
+            </div>
+        </div>
+    </div> 
+</div>
