@@ -40,30 +40,30 @@
     <br /><br/>
     <div id="new-films" class="col-lg-3">
         <h2>Just Released</h2>
-        <div class="thumbnail" ng-repeat="newFilm in newFilms" ng-click="Navigate(newFilm)"> 
-            <div class="img" style="background-image: url('{{newFilm.poster}}');"></div>
+        <div class="thumbnail" ng-repeat="newFilm in newFilms" ng-click="NavigateToMovie(newFilm)"> 
+            <div class="img" style="background-image: url('http://image.tmdb.org/t/p/w300{{newFilm.poster_path}}');"></div>
             <div class="caption"> 
-                <h3>{{newFilm.title}}</h3> 
+                <h3>{{newFilm.original_title}}</h3> 
                 <p>
-                    {{newFilm.plot}}
+                    {{newFilm.overview}}
                 </p>
             </div> 
         </div>
 
     </div>
-
-    <div class="col-lg-9">
+ <div class="col-lg-9">
         <h2>Popular</h2>
         <div class="col-sm-6 col-md-4" ng-repeat="popularFilm in popularFilms"> 
-            <div class="thumbnail" ng-click="Navigate(popularFilm)"> 
-                <div class="img" style="background-image: url('{{popularFilm.poster}}');"></div>
+            <div class="thumbnail" ng-click="NavigateToMovie(popularFilm)"> 
+                <div class="img" style="background-image: url('http://image.tmdb.org/t/p/w300{{popularFilm.poster_path}}');"></div>
                 <div class="caption">
                     <h3>{{popularFilm.title}}</h3>
                     <p>
-                        {{popularFilm.plot}}
+                        {{popularFilm.overview}}
                     </p> 
                 </div> 
             </div>
         </div>                        
     </div>
+   
 </div>

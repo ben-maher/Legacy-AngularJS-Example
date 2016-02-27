@@ -33,6 +33,11 @@
                             templateUrl: 'templates/search.html',
                             controller: 'SearchController'
                         })
+                        .when('/movie/:id', {
+                            name: 'movie',
+                            templateUrl: 'templates/movie.html',
+                            controller: 'MovieController'
+                        })
                         .otherwise({
                             name: 'home',
                             templateUrl: 'templates/home.html',
