@@ -38,6 +38,16 @@
                             templateUrl: 'templates/movie.html',
                             controller: 'MovieController'
                         })
+                        .when('/tv/:id', {
+                            name: 'movie',
+                            templateUrl: 'templates/tv.html',
+                            controller: 'TvController'
+                        })
+                        .when('/person/:id', {
+                            name: 'movie',
+                            templateUrl: 'templates/person.html',
+                            controller: 'PersonController'
+                        })
                         .otherwise({
                             name: 'home',
                             templateUrl: 'templates/home.html',

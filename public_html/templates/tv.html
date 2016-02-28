@@ -1,0 +1,68 @@
+<div ng-if="movie !== null" class="template" ng-controller="TvController">
+    <div class="col-xs-12 col-sm-6">
+        <div id="plot" class="panel panel-default">
+            <div class="panel-body">
+                <h2>{{show.name}}</h2>
+                <div ng-if="movie.poster !== 'N/A'">
+                    <img src="http://image.tmdb.org/t/p/w300{{show.poster_path}}" alt="{{movie.name}} poster" /><br /><br/>
+                </div>
+                <div ng-if="show.overview !== 'N/A'">
+                    <p>
+                        {{show.overview}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Cast</h4>
+                <table class="table table-striped search-results">
+                    <thead>
+                    <th width="150"></th>
+                    <th>character</th>
+                    <th>Actor</th>
+                    </thead>
+                    <tbody>
+                        <tr class="search-result" ng-repeat="castMember in show.credits.cast" ng-click="Navigate(imdbItem)" >
+                            <td><img ng-if="castMember.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{castMember.profile_path}}" alt="{{castMember.character}}" /></td>
+                            <td>{{castMember.character}}</td>
+                            <td>{{castMember.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Crew</h4>
+                <table class="table table-striped search-results">
+                    <thead>
+                    <th width="150"></th>
+                    <th>Name</th>
+                    <th>Department/Job</th>
+                    </thead>
+                    <tbody>
+                        <tr class="search-result" ng-repeat="crewMember in show.credits.crew" ng-click="Navigate(imdbItem)" >
+                            <td><img ng-if="crewMember.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{crewMember.profile_path}}" alt="{{castMember.character}}" /></td>
+                            <td>{{crewMember.name}}</td>
+                            <td>{{crewMember.department}} - {{crewMember.job}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Details</div>
+            <div class="panel-body">
+                <ul>
+                    <li><b>Title:</b> {{show.name}}</li> 
+                    <li><b>Released:</b> {{show.first_air_date}} </li> 
+                    <li><b>Runtime:</b> {{show.runtime.toString()}} Minutes</li> 
+                    <li><b>Genre:</b> {{show.genresString.toString()}} </li> 
+                    <li><b>Language:</b> {{show.original_language}} </li>                    
+                    <li><b>Website:</b> <a href="{{show.homepage}}" target="_blank">{{show.homepage}}</a> </li> 
+                </ul>
+            </div>
+        </div>
+    </div> 
+</div>

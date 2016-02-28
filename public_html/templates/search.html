@@ -8,10 +8,10 @@
                 <th>Release Date</th>
                 </thead>
                 <tbody>
-                    <tr class="search-result" ng-repeat="imdbItem in imdbItems" ng-click="Navigate(imdbItem)" >
-                        <td><img ng-if="imdbItem.poster !== 'N/A'" ng-src="{{imdbItem.poster}}" alt="{{imdbItem.title}}" /></td>
-                        <td>{{imdbItem.title}}</td>
-                        <td>{{imdbItem.year}}</td>
+                    <tr class="search-result" ng-repeat="searchResult in searchResults" ng-click="Navigate(searchResult)" >
+                        <td><img ng-if="searchResult.poster_path !== null  || searchResult.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{Poster(searchResult)}}" alt="{{GetName(searchResult)}}" /></td>
+                        <td>{{GetName(searchResult)}}</td>
+                        <td>{{Released(searchResult)}}</td>
                     </tr>
                 </tbody>
             </table>

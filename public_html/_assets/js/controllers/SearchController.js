@@ -6,57 +6,35 @@ angular.module('ImdbRip').controller('SearchController', function ($scope, $rout
 
     var imdbReq = {
         method: 'GET',
-        url: 'https://omdbapi.com/?s=' + $routeParams.query + '&v=1'
+        url: 'https://api.themoviedb.org/3/search/multi?query=' + $routeParams.query + '&api_key=4b9adfc40dafb4edd660a77a53f04129'
     };
 
 
     $scope.imdbItems = [];
     $http(imdbReq).success(function (data) {
-        data.Search.forEach(function (value) {
-            $scope.imdbItems.push(
-                    {
-                        title: value.Title,
-                        year: value.Year,
-                        rated: value.Rated,
-                        released: value.Released,
-                        runtime: value.Runtime,
-                        genre: value.Genre,
-                        director: value.Director,
-                        writer: value.Writer,
-                        actors: value.Actors,
-                        plot: value.Plot,
-                        language: value.Language,
-                        country: value.Country,
-                        awards: value.Awards,
-                        poster: 'https://img.omdbapi.com/?i=' + value.imdbID + '&apikey=bfcb4000&h=500',
-                        metascore: value.Metascore,
-                        imdbRating: value.imdbRating,
-                        imdbVotes: value.imdbVotes,
-                        imdbId: value.imdbID,
-                        type: value.Type,
-                        tomatoMeter: value.tomatoMeter,
-                        tomatoImage: value.tomatoImage,
-                        tomatoRating: value.tomatoRating,
-                        tomatoReviews: value.tomatoReviews,
-                        tomatoFresh: value.tomatoFresh,
-                        tomatoRotten: value.tomatoRotten,
-                        tomatoConsensus: value.tomatoConesnsus,
-                        tomatoUserMeter: value.tomatoUserMeter,
-                        tomatoUserRating: value.tomatoUserRating,
-                        tomatoUserReviews: value.tomatoUserREviews,
-                        tomatoUrl: value.tomatoURL,
-                        dvd: value.DVD,
-                        boxOffice: value.BoxOffice,
-                        production: value.Production,
-                        website: value.Website
-                    }
-            )
-        });
-        //todo .replace("http://","https://")
+        $scope.searchResults = data.results;
+        console.log($scope.searchResults);
 
     });
-
-    $scope.Navigate = function (imdbItem) {
-        window.location = "#/details/" + imdbItem.imdbId;
+    
+    $scope.GetName = function(object){
+        if (object.media_type === "tv") return object.name;
+        if (object.media_type === "movie") return object.title;
+        if (object.media_type === "person") return object.name;
+    };
+    
+    $scope.Released = function (object){
+        if (object.media_type === "tv") return object.first_air_date;
+        if (object.media_type === "movie") return object.release_date;
+    };
+    
+    $scope.Poster = function (object){
+        if (object.media_type === "person") return object.profile_path;
+        else return object.poster_path;
+    };
+    
+    $scope.Navigate = function (searchResult) {
+        window.location = '#/'+ searchResult.media_type + '/' + searchResult.id;
+        //todo there can be cleanup using media_type instead of if
     };
 });
