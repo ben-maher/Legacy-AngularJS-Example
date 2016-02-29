@@ -51,8 +51,6 @@ angular.module('ImdbRip').controller('DetailsController', function ($scope, $rou
     };
 
 $http(trailerReq).success(function (data){
-    console.log(data);
-    console.log(trailerReq);
    $scope.imdbItem.trailer = data.first(); 
 });
 

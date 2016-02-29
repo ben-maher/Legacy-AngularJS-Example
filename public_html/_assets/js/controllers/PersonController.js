@@ -15,8 +15,6 @@ angular.module('ImdbRip').controller('PersonController', function ($scope, $rout
         $http(personCredits).success(function(data){
             $scope.person.credits = data;
         });
-        
-        console.log($scope.person);
     });
     
     $scope.GetName = function(object){

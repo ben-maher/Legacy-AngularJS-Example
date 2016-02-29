@@ -13,7 +13,6 @@ angular.module('ImdbRip').controller('SearchController', function ($scope, $rout
     $scope.imdbItems = [];
     $http(imdbReq).success(function (data) {
         $scope.searchResults = data.results;
-        console.log($scope.searchResults);
 
     });
     

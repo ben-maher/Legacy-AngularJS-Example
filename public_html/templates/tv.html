@@ -4,7 +4,7 @@
             <div class="panel-body">
                 <h2>{{show.name}}</h2>
                 <div ng-if="movie.poster !== 'N/A'">
-                    <img src="http://image.tmdb.org/t/p/w300{{show.poster_path}}" alt="{{movie.name}} poster" /><br /><br/>
+                    <img ng-src="http://image.tmdb.org/t/p/w300{{show.poster_path}}" alt="{{movie.name}} poster" /><br /><br/>
                 </div>
                 <div ng-if="show.overview !== 'N/A'">
                     <p>

@@ -17,8 +17,6 @@ angular.module('ImdbRip').controller('TvController', function ($scope, $routePar
             
            $scope.show.genresString = $scope.show.genres.map(function(genre) { return genre['name']; });
         });
-        
-            console.log($scope.show);
 
     });
 
