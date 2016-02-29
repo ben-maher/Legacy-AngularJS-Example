@@ -26,7 +26,6 @@ angular.module('ImdbRip').controller('MovieController', function ($scope, $route
 
         $http(reviewsByMovie).success(function (data) {
             $scope.movie.reviews = data;
-            console.log($scope.movie);
         });
 
     });
