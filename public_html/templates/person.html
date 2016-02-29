@@ -6,40 +6,26 @@
             <p>{{person.biography}}</p>
         </div>        
     </div>
-    
-    <div class="panel panel-default">
-            <div class="panel-body">
-                <h4>Cast</h4>
-                <table class="table table-striped search-results">
-                    <thead>
-                    <th width="150"></th>
-                    <th>Film/Show</th>
-                    <th>Character</th>
-                    </thead>
-                    <tbody>
-                        <tr class="search-result" ng-repeat="role in person.credits.cast" ng-click="Navigate(role)" >
-                            <td><img ng-if="role.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{role.poster_path}}" alt="{{role.character}}" /></td>
-                            <td>{{GetName(role)}}</td>
-                            <td>{{role.character}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <h4>Crew</h4>
-                <table class="table table-striped search-results">
-                    <thead>
-                    <th width="150"></th>
-                    <th>Name</th>
-                    <th>Department/Job</th>
-                    </thead>
-                    <tbody>
-                        <tr class="search-result" ng-repeat="crewMember in movie.credits.crew" ng-click="Navigate(imdbItem)" >
-                            <td><img ng-if="crewMember.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{crewMember.profile_path}}" alt="{{castMember.character}}" /></td>
-                            <td>{{crewMember.name}}</td>
-                            <td>{{crewMember.department}} - {{crewMember.job}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped search-results">
+                <thead>
+                <th width="150"></th>
+                <th>Film/Show</th>
+                <th>Character</th>
+                <th>Date</th>
+                </thead>
+                <tbody>
+                    <tr class="search-result" ng-repeat="role in person.credits.cast | orderBy:'release_date'" ng-click="Navigate(role)" >
+                        <td><img ng-if="role.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{role.poster_path}}" alt="{{role.character}}" /></td>
+                        <td>{{GetName(role)}}</td>
+                        <td>{{role.character}}</td>
+                        <td>{{role.release_date}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+    </div>
 </div>

@@ -24,5 +24,9 @@ angular.module('ImdbRip').controller('PersonController', function ($scope, $rout
         if (object.media_type === "movie") return object.title;
     };
     
+    $scope.Navigate = function (searchResult) {
+        window.location = '#/'+ searchResult.media_type + '/' + searchResult.id;
+    };
+    
     
 });

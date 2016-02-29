@@ -22,7 +22,9 @@ angular.module('ImdbRip').controller('TvController', function ($scope, $routePar
 
     });
 
-
+    $scope.NavigateToPerson = function (castMember) {
+        window.location = '#/person/' + castMember.id;
+    };
 
 });
             
