@@ -18,8 +18,6 @@ angular.module('ImdbRip').directive('autoComplete', function ($timeout, $http) {
                     response(titles.filter(function (word) {
                         return word.label.normalise().contains(request.term.normalise());
                     }));
-                    console.log(titles);
-                    console.log(data);
                 });
             };
 
