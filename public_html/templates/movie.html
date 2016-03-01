@@ -116,8 +116,8 @@
                         <tr ng-repeat="review in movie.reviews.results" >
                             <td>{{review.author}}</td>
                             <td>
-                                <a data-target="#review_collapse" class="btn btn-primary" data-toggle="collapse">See Review</a>
-                                <div id="review_collapse" class="collapse">
+                                <a data-target="#review_collapse_{{review.content}}" class="btn btn-primary" data-toggle="collapse">See Review</a>
+                                <div id="review_collapse_{{review.content}}" class="collapse">
                                     {{review.content}}
                                 </div></td>
                         </tr>
