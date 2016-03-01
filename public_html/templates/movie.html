@@ -62,18 +62,38 @@
         <div class="panel panel-default">
             <div class="panel-heading">Details</div>
             <div class="panel-body">
-                <ul>
-                    <li><b>Title:</b> {{movie.title}}</li> 
-                    <li><b>Released:</b> {{movie.release_date}} </li> 
-                    <li><b>Runtime:</b> {{movie.runtime}} </li> 
-                    <li><b>Genre:</b> {{movie.genresString.toString()}} </li> 
-                    <li><b>Language:</b> {{movie.original_language}} </li> 
-                    <li><b>Country:</b> {{movie.country}}</li> 
-                    <li><b>DVD:</b> {{movie.dvd}}</li> 
-                    <li><b>Box Office:</b> {{movie.boxOffice}} </li> 
-                    <li><b>Production:</b> {{movie.production}} </li> 
-                    <li><b>Website:</b> <a href="{{movie.homepage}}" target="_blank">{{movie.homepage}}</a> </li> 
-                </ul>
+                <table class="table">
+				<tr>
+                    <td><b>Title:</b> </td> <td></td> 
+				</tr>
+				<tr>
+                    <td><b>Released:</b></td> <td>{{movie.release_date}} </td> 
+				</tr>
+				<tr>
+                    <td><b>Runtime:</b></td>    <td>{{movie.runtime}} </td> 
+				</tr>
+				<tr>
+                    <td><b>Genre:</b></td>  <td>{{movie.genresString.toString()}} </td> 
+				</tr>
+				<tr>
+                    <td><b>Language:</b></td><td>{{movie.original_language}} </td> 
+				</tr>
+				<tr>
+                    <td><b>Country:</b></td>    <td>{{movie.country}}</td> 
+				</tr>
+				<tr>
+                    <td><b>DVD:</b></td>    <td>{{movie.dvd}}</li> </td>
+				</tr>
+				<tr>
+                    <td><b>Box Office:</b></td> <td>{{movie.boxOffice}} </td> 
+				</tr>
+				<tr>
+                    <td><b>Production:</b></td> <td>{{movie.production}} </td> 
+				</tr>
+				<tr>
+                    <td><b>Website:</b></td>    <td><a href="{{movie.homepage}}" target="_blank">{{movie.title}} Website</a></td> 
+				</tr>
+</table>
             </div>
         </div>
 
