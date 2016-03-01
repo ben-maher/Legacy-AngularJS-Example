@@ -20,7 +20,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Cast</div>
             <div class="panel-body">
-                <table class="table table-striped search-results">
+                <table class="table table-striped table-condenced">
                     <thead>
                    
                     <th>character</th>
@@ -40,9 +40,11 @@
         <div class="panel panel-default">
             <div class="panel-heading"> Crew </div>
             <div class="panel-body">
-                <table class="table table-striped search-results">
+                 <a data-target="#crew_collapse" class="btn btn-primary" data-toggle="collapse">See Crew</a>
+                                <div id="crew_collapse" class="collapse">
+                <table class="table table-striped table-condensed">
                     <thead>
-                    <th width="150"></th>
+                   
                     <th>Name</th>
                     <th>Role</th>
                     </thead>
@@ -54,7 +56,7 @@
                         </tr>
                     </tbody>
                 </table>
-
+                </div>
             </div>
         </div>
     </div>
@@ -110,8 +112,8 @@
                         <tr ng-repeat="review in movie.reviews.results" >
                             <td>{{review.author}}</td>
                             <td>
-                                <a data-target="#movie_collapse_{{review.id}}" class="btn btn-primary" data-toggle="collapse">See Review</a>
-                                <div id="movie_collapse_{{review.id}}" class="collapse">
+                                <a data-target="#review_collapse" class="btn btn-primary" data-toggle="collapse">See Review</a>
+                                <div id="review_collapse" class="collapse">
                                     {{review.content}}
                                 </div></td>
                         </tr>
