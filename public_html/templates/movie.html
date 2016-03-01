@@ -89,7 +89,7 @@
                         <td><b>Country:</b></td>    <td>{{movie.country}}</td> 
                     </tr>
                     <tr>
-                        <td><b>DVD:</b></td>    <td>{{movie.dvd}}</li> </td>
+                        <td><b>DVD:</b></td>    <td>{{movie.dvd}} </td>
                     </tr>
                     <tr>
                         <td><b>Box Office:</b></td> <td>{{movie.boxOffice}} </td> 
@@ -137,11 +137,8 @@
                 <h4 class="modal-title" id="myModalLabel">Videos</h4>
             </div>
             <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <iframe class="embed-responsive-item" ng-if="movie.currentTrailer" width="960" height="720" ng-src="{{getVideoSrc(movie.currentTrailer)}}" frameborder="0" allowfullscreen></iframe>
+                <button ng-repeat="(key, trailer) in movie.trailers" ng-bind="key" ng-click="movie.currentTrailer = trailer;"></button>
             </div>
         </div>
     </div>
