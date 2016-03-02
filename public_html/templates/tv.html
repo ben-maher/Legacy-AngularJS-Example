@@ -62,29 +62,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">Details</div>
             <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <td><b>Title:</b> </td><td style="text-align:left">{{show.name}}</td> 
-                        </tr>
-                        <tr>
-                            <td><b>Released:</b> </td><td style="text-align:left"> {{show.first_air_date}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Runtime:</b> </td><td style="text-align:left"> {{show.runtime.toString()}} Minutes</td> 
-                        </tr>
-                        <tr>
-                            <td><b>Genre:</b> </td><td style="text-align:left">{{show.genresString.toString()}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Language:</b> </td><td style="text-align:left">{{show.original_language}} </td>  
-                        </tr>
-                        <tr>
-                            <td><b>Website:</b> </td><td style="text-align:left"> <a href="{{show.homepage}}" target="_blank">{{show.name}} Home Page</a> </td> 
-                        </tr>
-
-                    </table>
-                </div>
+                <ul class="list-unstyled">
+                    <li><b>Title:</b> {{show.name}}</li> 
+                            <li><b>Released:</b> {{show.first_air_date}} </li> 
+                            <li><b>Runtime:</b> {{show.runtime.toString()}} Minutes</li> 
+                            <li><b>Genre:</b> {{show.genresString.toString()}} </li> 
+                            <li><b>Language:</b> {{show.original_language}} </li>  
+                            <li><b>Website:</b><a href="{{show.homepage}}" target="_blank">{{show.name}} Home Page</a> </li> 
+                </ul>                            
             </div>
         </div>
 

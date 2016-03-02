@@ -26,7 +26,6 @@ angular.module('ImdbRip').controller('TvController', function ($scope, $routePar
 
         $http(similiarShowsByShow).success(function (data) {
             $scope.show.similarShows = data.results;
-            console.log($scope.show.similarShows);
         });
 
     });
