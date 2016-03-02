@@ -1,0 +1,22 @@
+<div class="template" ng-controller="PopularMoviesController">
+    <div id="plot" class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped search-results">
+                <thead>
+                <th width="150"></th>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+                </thead>
+                <tbody>
+                    <tr class="search-result" ng-repeat="popularMovie in popularMovies" ng-click="NavigateToMovie(popularMovie)" >
+                        <td><img ng-if="popularMovie.poster_path !== null  || popularMovie.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{popularMovie.poster_path}}" alt="{{popularMovie.title}}" /></td>
+                        <td>{{popularMovie.title}}</td>
+                        <td>{{popularMovie.release_date}}</td>
+                        <td>{{popularMovie.vote_average}} / 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

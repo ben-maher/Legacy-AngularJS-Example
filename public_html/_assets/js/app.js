@@ -39,6 +39,11 @@
                             templateUrl: 'templates/movie/just-released.html',
                             controller: 'MoviesJustReleasedController'
                         })
+                        .when('/movie/popular', {
+                            name: 'movie_popular',
+                            templateUrl: 'templates/movie/popular.html',
+                            controller: 'PopularMoviesController'
+                        })
                         .when('/movie/:id', {
                             name: 'movie',
                             templateUrl: 'templates/movie.html',
