@@ -6,7 +6,7 @@ angular.module('ImdbRip').controller('SearchController', function ($scope, $rout
 
     var imdbReq = {
         method: 'GET',
-        url: 'https://api.themoviedb.org/3/search/multi?query=' + $routeParams.query + '&api_key=4b9adfc40dafb4edd660a77a53f04129'
+        url: 'https://api.themoviedb.org/3/search/multi?query=' + $routeParams.query.normalise(true) + '&api_key=4b9adfc40dafb4edd660a77a53f04129'
     };
 
 

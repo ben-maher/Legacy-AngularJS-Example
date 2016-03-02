@@ -8,8 +8,9 @@
         String.prototype.contains = function (str) {
             return this.indexOf(str) > -1;
         };
-    String.prototype.normalise = function () {
-        return this.replace(/([^a-z0-9]|\s)*/gi, '').toLowerCase();
+    String.prototype.normalise = function (keepSpaces) {
+        keepSpaces = keepSpaces === true;
+        return this.replace(/([^a-z0-9\s])*/gi, '').replace(/\s+/g,keepSpaces ? ' ' : '').toLowerCase();
     };
     angular.module('ImdbRip', ["ngRoute", "ngResource"])
 

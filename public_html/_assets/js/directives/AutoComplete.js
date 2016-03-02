@@ -5,7 +5,7 @@ angular.module('ImdbRip').directive('autoComplete', function ($timeout, $http) {
             var titles = function (request, response) {
                 var searchReq = {
                     method: 'GET',
-                    url: 'https://api.themoviedb.org/3/search/multi?query=' + request.term + '&api_key=4b9adfc40dafb4edd660a77a53f04129'
+                    url: 'https://api.themoviedb.org/3/search/multi?query=' + request.term.normalise(true) + '&api_key=4b9adfc40dafb4edd660a77a53f04129'
                 };
 
                 $http(searchReq).success(function (data) {
