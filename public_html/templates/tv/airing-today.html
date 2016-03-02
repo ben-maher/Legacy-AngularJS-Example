@@ -1,0 +1,20 @@
+<div class="template" ng-controller="TvAiringTodayController">
+    <div id="plot" class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped search-results">
+                <thead>
+                <th width="150"></th>
+                <th>Title</th>
+                <th>Rating</th>
+                </thead>
+                <tbody>
+                    <tr class="search-result" ng-repeat="airingTodayShow in airingTodayShows" ng-click="NavigateToShow(airingTodayShow)" >
+                        <td><img ng-if="airingTodayShow.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{airingTodayShow.poster_path}}" alt="{{airingTodayShow.name}}" /></td>
+                        <td>{{airingTodayShow.name}}</td>
+                        <td>{{airingTodayShow.vote_average}} / 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

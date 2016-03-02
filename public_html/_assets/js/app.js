@@ -54,6 +54,21 @@
                             templateUrl: 'templates/movie.html',
                             controller: 'MovieController'
                         })
+                        .when('/tv/airing-today', {
+                            name: 'tv_airing-today',
+                            templateUrl: 'templates/tv/airing-today.html',
+                            controller: 'TvAiringTodayController'
+                        })
+                        .when('/tv/popular', {
+                            name: 'tv_popular',
+                            templateUrl: 'templates/tv/popular.html',
+                            controller: 'TvPopularController'
+                        })
+                        .when('/tv/top-rated', {
+                            name: 'tv_top-rated',
+                            templateUrl: 'templates/tv/top-rated.html',
+                            controller: 'TvTopRatedController'
+                        })
                         .when('/tv/:id', {
                             name: 'movie',
                             templateUrl: 'templates/tv.html',

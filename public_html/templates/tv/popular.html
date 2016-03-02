@@ -1,0 +1,20 @@
+<div class="template" ng-controller="TvPopularController">
+    <div id="plot" class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped search-results">
+                <thead>
+                <th width="150"></th>
+                <th>Title</th>
+                <th>Rating</th>
+                </thead>
+                <tbody>
+                    <tr class="search-result" ng-repeat="popularShow in popularShows" ng-click="NavigateToShow(popularShow)" >
+                        <td><img ng-if="popularShow.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{popularShow.poster_path}}" alt="{{popularShow.name}}" /></td>
+                        <td>{{popularShow.name}}</td>
+                        <td>{{popularShow.vote_average}} / 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -39,12 +39,12 @@ Ben Maher - Group Assignment - Web Development.
                                 <li ng-class="{active:App.onRoute('movie_top-rated')}"><a href="#/movie/top-rated">Top Rated</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <li ng-class="{active:App.onRoute('tv*')}" class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tv-Shows <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Airing Today</a></li>
-                                <li><a href="#">Popular Movies</a></li>
-                                <li><a href="#">Top Rated</a></li>
+                                <li ng-class="{active:App.onRoute('tv_airing-today')}"><a href="#/tv/airing-today">Airing Today</a></li>
+                                <li ng-class="{active:App.onRoute('tv_popular')}"><a href="#/tv/popular">Popular Shows</a></li>
+                                <li ng-class="{active:App.onRoute('tv_top-rated')}"><a href="#/tv/top-rated">Top Rated</a></li>
                             </ul>
                         </li>
                         <li ng-class="{active:App.onRoute('contact')}"><a href="#/contact">Contact</a></li>
@@ -84,6 +84,9 @@ Ben Maher - Group Assignment - Web Development.
         <script src="_assets/js/controllers/MoviesJustReleasedController.js" type="text/javascript"></script>
         <script src="_assets/js/controllers/PopularMoviesController.js" type="text/javascript"></script>
         <script src="_assets/js/controllers/TopRatedMoviesController.js" type="text/javascript"></script>
+        <script src="_assets/js/controllers/TvAiringTodayController.js" type="text/javascript"></script>
+        <script src="_assets/js/controllers/TvPopularController.js" type="text/javascript"></script>
+        <script src="_assets/js/controllers/TvTopRatedController.js" type="text/javascript"></script>
         <!-- Directives -->
         <script src="_assets/js/directives/AutoComplete.js" type="text/javascript"></script>
     </body>

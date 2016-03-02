@@ -1,0 +1,20 @@
+<div class="template" ng-controller="TvTopRatedController">
+    <div id="plot" class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped search-results">
+                <thead>
+                <th width="150"></th>
+                <th>Title</th>
+                <th>Rating</th>
+                </thead>
+                <tbody>
+                    <tr class="search-result" ng-repeat="topRatedShow in topRatedShows" ng-click="NavigateToShow(topRatedShow)" >
+                        <td><img ng-if="topRatedShow.poster_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{topRatedShow.poster_path}}" alt="{{topRatedShow.name}}" /></td>
+                        <td>{{topRatedShow.name}}</td>
+                        <td>{{topRatedShow.vote_average}} / 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
