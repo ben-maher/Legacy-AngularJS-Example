@@ -19,11 +19,6 @@
                     'https://www.youtube.com/**'
                 ]);
                 $routeProvider
-                        .when('/details/:imdbId', {
-                            name: 'details',
-                            templateUrl: 'templates/details.html',
-                            controller: 'DetailsController'
-                        })
                         .when('/contact', {
                             name: 'contact',
                             templateUrl: 'templates/contact.html',
@@ -70,12 +65,12 @@
                             controller: 'TvTopRatedController'
                         })
                         .when('/tv/:id', {
-                            name: 'movie',
+                            name: 'tv',
                             templateUrl: 'templates/tv.html',
                             controller: 'TvController'
                         })
                         .when('/person/:id', {
-                            name: 'movie',
+                            name: 'person',
                             templateUrl: 'templates/person.html',
                             controller: 'PersonController'
                         })
