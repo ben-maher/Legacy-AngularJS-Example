@@ -34,6 +34,11 @@ if (!String.prototype.startsWith)
                         templateUrl: 'templates/search.html',
                         controller: 'SearchController'
                 })
+                .when('/movie/just-released', {
+                name: 'movie',
+                        templateUrl: 'templates/movie/just-released.html',
+                        controller: 'MovieJustReleasedController'
+                })
                 .when('/movie/:id', {
                 name: 'movie',
                         templateUrl: 'templates/movie.html',
