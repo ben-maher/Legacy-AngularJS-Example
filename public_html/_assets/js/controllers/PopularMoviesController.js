@@ -1,10 +1,10 @@
 angular.module('ImdbRip').controller('PopularMoviesController', function ($scope, $routeParams, $http, $sce) {
-    var justReleasedReq = {
+    var popularMoviesReq = {
         type: 'GET',
         url: 'http://api.themoviedb.org/3/movie/popular?api_key=4b9adfc40dafb4edd660a77a53f04129'
     };
 
-    $http(justReleasedReq).success(function (data) {
+    $http(popularMoviesReq).success(function (data) {
         $scope.popularMovies = data.results;
     });
 

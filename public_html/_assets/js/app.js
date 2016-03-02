@@ -44,6 +44,11 @@
                             templateUrl: 'templates/movie/popular.html',
                             controller: 'PopularMoviesController'
                         })
+                        .when('/movie/top-rated', {
+                            name: 'movie_top-rated',
+                            templateUrl: 'templates/movie/top-rated.html',
+                            controller: 'TopRatedMoviesController'
+                        })
                         .when('/movie/:id', {
                             name: 'movie',
                             templateUrl: 'templates/movie.html',

@@ -35,8 +35,8 @@ Ben Maher - Group Assignment - Web Development.
                             <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Movies <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li ng-class="{active:App.onRoute('movie_just-released')}"><a href="#/movie/just-released">Just Released</a></li>
-                                <li><a ng-class="{active:App.onRoute('movie_popular')}" href="#/movie/popular">Popular Movies</a></li>
-                                <li><a href="#">Top Rated</a></li>
+                                <li ng-class="{active:App.onRoute('movie_popular')}"><a href="#/movie/popular">Popular Movies</a></li>
+                                <li ng-class="{active:App.onRoute('movie_top-rated')}"><a href="#/movie/top-rated">Top Rated</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
@@ -83,6 +83,7 @@ Ben Maher - Group Assignment - Web Development.
         <script src="_assets/js/controllers/TvController.js" type="text/javascript"></script>
         <script src="_assets/js/controllers/MoviesJustReleasedController.js" type="text/javascript"></script>
         <script src="_assets/js/controllers/PopularMoviesController.js" type="text/javascript"></script>
+        <script src="_assets/js/controllers/TopRatedMoviesController.js" type="text/javascript"></script>
         <!-- Directives -->
         <script src="_assets/js/directives/AutoComplete.js" type="text/javascript"></script>
     </body>
