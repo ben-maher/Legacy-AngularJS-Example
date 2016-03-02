@@ -16,6 +16,9 @@ angular.module('ImdbRip').controller('TvController', function ($scope, $routePar
     $http(showById).success(function (data) {
         $scope.show = data;
 
+        if ($scope.show.backdrop_path)
+            angular.element('#page-bg').css("background-image", "url('http://image.tmdb.org/t/p/original" + $scope.show.backdrop_path + "')");
+
         $http(creditsByShow).success(function (data) {
             $scope.show.credits = data;
 
