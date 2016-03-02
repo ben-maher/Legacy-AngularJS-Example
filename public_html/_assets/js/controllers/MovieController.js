@@ -16,7 +16,12 @@ angular.module('ImdbRip').controller('MovieController', function ($scope, $route
 
     var trailersByMovie = {
         type: 'GET',
-        url: 'http://api.themoviedb.org/3/movie/' + $routeParams.id + '/videos?api_key=4b9adfc40dafb4edd660a77a53f04129'
+        url: 'https://api.themoviedb.org/3/movie/' + $routeParams.id + '/videos?api_key=4b9adfc40dafb4edd660a77a53f04129'
+    };
+
+    var similarMoviesByMovie = {
+        type: 'GET',
+        url: 'https://api.themoviedb.org/3/movie/' + $routeParams.id + '/similar?api_key=4b9adfc40dafb4edd660a77a53f04129'
     };
 
     $http(movieById).success(function (data) {
@@ -39,13 +44,26 @@ angular.module('ImdbRip').controller('MovieController', function ($scope, $route
             $scope.movie.currentTrailer = data.results[0];
         });
 
+        $http(similarMoviesByMovie).success(function (data) {
+            $scope.movie.similarMovies = data.results;
+        });
+
         $scope.getVideoSrc = function (trailer) {
             return 'https://www.youtube.com/embed/' + trailer.key + '?rel=0&amp;showinfo=0';
         };
+
+        $scope.Navigate = function (searchResult) {
+            window.location = '#/' + searchResult.media_type + '/' + searchResult.id;
+        };
+
     });
-    
+
     $scope.NavigateToPerson = function (castMember) {
         window.location = '#/person/' + castMember.id;
+    };
+    
+        $scope.NavigateToMovie = function (movie) {
+        window.location = '#/movie/' + movie.id;
     };
 });
             
