@@ -30,7 +30,7 @@ body {
 #main-nav li a {
     text-shadow: none;
 }
-#main-nav li.active a {
+#main-nav li.active > a {
     text-shadow: none;
     background: #39F;
     color: #FFF;
