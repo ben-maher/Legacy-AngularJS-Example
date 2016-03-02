@@ -7,19 +7,34 @@ angular.module('ImdbRip').controller('TvController', function ($scope, $routePar
         type: 'GET',
         url: 'https://api.themoviedb.org/3/tv/' + $routeParams.id + '/credits?api_key=4b9adfc40dafb4edd660a77a53f04129'
     };
-    
+
+    var similiarShowsByShow = {
+        type: 'GET',
+        url: 'http://api.themoviedb.org/3/tv/' + $routeParams.id + '/similar?api_key=4b9adfc40dafb4edd660a77a53f04129'
+    };
 
     $http(showById).success(function (data) {
         $scope.show = data;
 
         $http(creditsByShow).success(function (data) {
             $scope.show.credits = data;
-            
-           $scope.show.genresString = $scope.show.genres.map(function(genre) { return genre['name']; });
+
+            $scope.show.genresString = $scope.show.genres.map(function (genre) {
+                return genre['name'];
+            });
+        });
+
+        $http(similiarShowsByShow).success(function (data) {
+            $scope.show.similarShows = data.results;
+            console.log($scope.show.similarShows);
         });
 
     });
 
+
+    $scope.NavigateToShow = function (similarShow) {
+        window.location = '#/tv/' + similarShow.id;
+    };
     $scope.NavigateToPerson = function (castMember) {
         window.location = '#/person/' + castMember.id;
     };
