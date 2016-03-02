@@ -9,7 +9,7 @@ angular.module('ImdbRip').directive('autoComplete', function ($timeout, $http) {
                 };
 
                 $http(searchReq).success(function (data) {
-                    var titles = (data.results || []).map(function (obj) {
+                    var titles = (data.results || []).slice(0,10).map(function (obj) {
                         return {
                             label: GetName(obj),
                             value: obj
@@ -49,6 +49,9 @@ angular.module('ImdbRip').directive('autoComplete', function ($timeout, $http) {
                     return false;
                 }
             });
+            iElement.autocomplete('instance')._renderItem = function (ul, item) {
+                return $("<li>").html('<img width="50" src="http://image.tmdb.org/t/p/w300'+item.value.poster_path+'"> <span>'+item.label+'</span>').appendTo(ul);
+            };
         }
     };
 });

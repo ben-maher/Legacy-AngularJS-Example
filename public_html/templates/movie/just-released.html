@@ -1,1 +1,22 @@
-HELLO
+<div class="template" ng-controller="MoviesJustReleasedController">
+    <div id="plot" class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped search-results">
+                <thead>
+                <th width="150"></th>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>Rating</th>
+                </thead>
+                <tbody>
+                    <tr class="search-result" ng-repeat="justReleasedMovie in justReleasedMovies" ng-click="NavigateToMovie(justReleasedMovie)" >
+                        <td><img ng-if="searchResult.poster_path !== null  || justReleasedMovie.profile_path !== null" ng-src="http://image.tmdb.org/t/p/w300{{justReleasedMovie.poster_path}}" alt="{{GetName(searchResult)}}" /></td>
+                        <td>{{justReleasedMovie.title}}</td>
+                        <td>{{justReleasedMovie.release_date}}</td>
+                        <td>{{justReleasedMovie.vote_average}} / 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

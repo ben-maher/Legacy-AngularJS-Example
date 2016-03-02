@@ -1,4 +1,4 @@
-angular.module('ImdbRip').controller('AppController', function ($route, $location) {
+angular.module('ImdbRip').controller('AppController', function ($scope, $route, $location) {
     this.onRoute = function (routeName) {
         var routeChecks = routeName instanceof Array ? routeName : arguments;
         var currentRouteName = $route.current && $route.current.name ? $route.current.name : null;
@@ -19,6 +19,10 @@ angular.module('ImdbRip').controller('AppController', function ($route, $locatio
     this.search = function() {
         $location.path('/search/'+this.searchTerm);
     };
+    
+    $scope.$on('$routeChangeSuccess', function() {
+        angular.element('#page-bg').css("background-image","");
+    });
     
 });
             

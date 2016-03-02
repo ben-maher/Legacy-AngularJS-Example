@@ -15,9 +15,22 @@ body {
     font: 14px/15px Arial,sans-serif;
     background: #222;
 }
+#page-bg {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    position: fixed;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
 .template {
     padding: 40px 15px;
     text-align: center;
+    opacity: 0.9;
+    overflow: hidden;
 }
 #main-nav {
     background: #333;
@@ -62,6 +75,9 @@ body {
 }
 .ui-autocomplete .ui-menu-item {
     /* border-radius: 5px; */
+}
+.ui-autocomplete .ui-menu-item.ui-state-focus {
+    font-weight: normal;
 }
 #plot img {
     max-width: 100%;

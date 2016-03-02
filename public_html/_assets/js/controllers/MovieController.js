@@ -26,7 +26,9 @@ angular.module('ImdbRip').controller('MovieController', function ($scope, $route
 
     $http(movieById).success(function (data) {
         $scope.movie = data;
-
+        
+        if ($scope.movie.backdrop_path) angular.element('#page-bg').css("background-image","url('http://image.tmdb.org/t/p/original"+$scope.movie.backdrop_path+"')");
+        
         $http(creditsByMovie).success(function (data) {
             $scope.movie.credits = data;
 
