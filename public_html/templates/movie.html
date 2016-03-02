@@ -68,44 +68,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Details</div>
             <div class="panel-body">
-<<<<<<< HEAD
-                <div class="table-responsive">
-                    <table class="table table-condensed">
-                        <tr>
-                            <td><b>Title:</b> </td> <td>{{movie.title}}</td> 
-                        </tr>
-                        <tr>
-                            <td><b>Released:</b></td> <td>{{movie.release_date}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Runtime:</b></td>    <td>{{movie.runtime}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Genre:</b></td>  <td>{{movie.genresString.toString()}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Language:</b></td><td>{{movie.original_language}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Country:</b></td>    <td>{{movie.country}}</td> 
-                        </tr>
-                        <tr>
-                            <td><b>DVD:</b></td>    <td>{{movie.dvd}} </td>
-                        </tr>
-                        <tr>
-                            <td><b>Box Office:</b></td> <td>{{movie.boxOffice}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Production:</b></td> <td>{{movie.production}} </td> 
-                        </tr>
-                        <tr>
-                            <td><b>Website:</b></td>    <td><a href="{{movie.homepage}}" target="_blank">{{movie.title}} Website</a></td> 
-                        </tr>
-                    </table>
-                </div>
-=======
-            <div class="table-responsive"
-                <table class="table table-condensed">
+                <table class="table table-condensed table-responsive">
                     <tr>
                         <td><b>Title:</b> </td> <td style="text-align:left">{{movie.title}}</td> 
                     </tr>
@@ -137,18 +100,17 @@
                         <td><b>Website:</b></td>    <td style="text-align:left"><a href="{{movie.homepage}}" target="_blank">{{movie.title}} Website</a></td> 
                     </tr>
                 </table>
->>>>>>> origin/v2
             </div>
         </div>
 
-        
+
         <div class="panel panel-default">
             <div class="panel-heading">Similar Movies</div>
             <div class="panel-body">
                 <img ng-repeat="similarMovie in movie.similarMovies" ng-src="http://image.tmdb.org/t/p/w300{{similarMovie.poster_path}}" ng-click="NavigateToMovie(similarMovie)" width="100px" height="150px"/>
             </div>
         </div>
-        
+
         <div class="panel panel-default">
             <div class="panel-heading">Reviews</div>
             <div class="panel-body">
