@@ -50,7 +50,9 @@ angular.module('ImdbRip').directive('autoComplete', function ($timeout, $http) {
                 }
             });
             iElement.autocomplete('instance')._renderItem = function (ul, item) {
-                return $("<li>").html('<img width="50" src="http://image.tmdb.org/t/p/w300'+item.value.poster_path+'"> <span>'+item.label+'</span>').appendTo(ul);
+                var imgSrc = item.value.poster_path ? 'https://image.tmdb.org/t/p/w300'+item.value.poster_path : 'https://placehold.it/50x75';
+                //
+                return $("<li>").html('<div class="autocomplete-image"><img src="'+imgSrc+'" ></div> <span>'+item.label+'</span>').appendTo(ul);
             };
         }
     };

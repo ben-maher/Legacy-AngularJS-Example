@@ -26,9 +26,10 @@ angular.module('ImdbRip').controller('MovieController', function ($scope, $route
 
     $http(movieById).success(function (data) {
         $scope.movie = data;
-        
-        if ($scope.movie.backdrop_path) angular.element('#page-bg').css("background-image","url('http://image.tmdb.org/t/p/original"+$scope.movie.backdrop_path+"')");
-        
+
+        if ($scope.movie.backdrop_path)
+            angular.element('#page-bg').css("background-image", "url('http://image.tmdb.org/t/p/original" + $scope.movie.backdrop_path + "')");
+
         $http(creditsByMovie).success(function (data) {
             $scope.movie.credits = data;
 
@@ -63,8 +64,8 @@ angular.module('ImdbRip').controller('MovieController', function ($scope, $route
     $scope.NavigateToPerson = function (castMember) {
         window.location = '#/person/' + castMember.id;
     };
-    
-        $scope.NavigateToMovie = function (movie) {
+
+    $scope.NavigateToMovie = function (movie) {
         window.location = '#/movie/' + movie.id;
     };
 });

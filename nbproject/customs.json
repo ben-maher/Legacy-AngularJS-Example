@@ -1,8 +1,14 @@
 {
-    "elements": {},
     "attributes": {
         "aria-expanded": {
             "context": "button"
+        }
+    },
+    "elements": {
+        "map-canvas": {
+            "attributes": {
+                "id": {}
+            }
         }
     }
 }

@@ -44,6 +44,10 @@
                             name: 'movie_top-rated',
                             templateUrl: 'templates/movie/top-rated.html',
                             controller: 'TopRatedMoviesController'
+                        }).when('/movie/local-cinemas', {
+                            name: 'movie_local-cinemas',
+                            templateUrl: 'templates/movie/local-cinemas.html',
+                            controller: 'LocalCinemasController'
                         })
                         .when('/movie/:id', {
                             name: 'movie',
