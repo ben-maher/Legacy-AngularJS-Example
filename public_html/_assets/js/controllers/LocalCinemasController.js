@@ -24,13 +24,19 @@
 //      });
 //    };
 
-angular.module('ImdbRip').controller('LocalCinemasController', function ($scope, $rootScope, $routeParams, $http, $sce) {
-   $rootScope.currentLocation = {};
-   
-   $scope.GetCurrentLocation = function () {
-   navigator.geolocation.getCurrentPosition (function (location){
-       $rootScope.currentLocation = location;
-       $scope.$apply();
-   });
-   };
+angular.module('ImdbRip').controller('LocalCinemasController', function ($scope, $rootScope) {
+
+    var GetCurrentLocation = function () {
+        navigator.geolocation.getCurrentPosition(function (location) {
+            $scope.currentLocation = location.coords;
+            console.log($scope.currentLocation);
+        });
+    };
+    
+    GetCurrentLocation();
+    
 });
+
+
+
+    

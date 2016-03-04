@@ -1,4 +1,7 @@
 <div class="template" ng-controller="LocalCinemasController">
-    <map-canvas id="map"></map-canvas>
+    <div ng-if="currentLocation !== null">
+        <map-canvas location="{{$scope.currentLocation}}" id="map"></map-canvas>
+    </div>
+        
 </div>
 

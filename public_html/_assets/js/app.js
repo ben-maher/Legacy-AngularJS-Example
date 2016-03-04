@@ -25,6 +25,11 @@
                             templateUrl: 'templates/contact.html',
                             controller: 'ContactController'
                         })
+                        .when('/about', {
+                            name: 'about',
+                            templateUrl: 'templates/about.html',
+                            controller: 'AboutController'
+                        })
                         .when('/search/:query', {
                             name: 'search',
                             templateUrl: 'templates/search.html',
